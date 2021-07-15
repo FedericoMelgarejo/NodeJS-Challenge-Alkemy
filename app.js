@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require('dotenv').config({path: __dirname + '/.env'});
 
 let apiRouter = require('./routes/apiRouter')
 

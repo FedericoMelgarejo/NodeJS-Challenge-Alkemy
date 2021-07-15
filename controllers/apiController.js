@@ -1,9 +1,8 @@
 const db = require('../database/models')
 const jwt = require('jsonwebtoken')
-const sgMail = require('@sendgrid/mail')
-const sgKey = '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'
+//const sgMail = require('@sendgrid/mail') <-- SENDGRID IMPLEMENTATION NOT WORKING BECAUSE THEY BANNED ME (FOR SECURITY ISSUES I GUESS) XD
 
-sgMail.setApiKey(sgKey)
+//sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const apiController = {
     //REGISTER
@@ -14,25 +13,25 @@ const apiController = {
             username: req.body.username,
             password: req.body.password
         }
-        let msg = {}
+        //let msg = {}
 
         jwt.sign({ user }, 'secretkey', (err, token) => {
-            if (user.email !== undefined) {
-                msg = {
-                    to: user.email,
-                    from: 'f.n.melgarejo@gmail.com',
-                    subject: 'From Disney API',
-                    text: 'Welcome to my Disney API!',
-                    html: '<h1>Welcome to my Disney API!</h1>',
-                }
-                sgMail.send(msg)
-                    .then(() => {
-                        console.log('Email sent!')
-                    })
-                    .catch((error) => {
-                        console.error(error)
-                    })
+            /*if (user.email !== undefined) {
+            msg = {
+                to: user.email,
+                from: 'f.n.melgarejo@gmail.com',
+                subject: 'From Disney API',
+                text: 'Welcome to my Disney API!',
+                html: '<h1>Welcome to my Disney API!</h1>',
             }
+            sgMail.send(msg)
+                .then(() => {
+                    console.log('Email sent!')
+                })
+                .catch((error) => {
+                    console.error(error)
+                })
+        } */
             if (user.username !== undefined) {
                 res.json({
                     msg: "Welcome " + user.username + ",this is your authorization token!",
