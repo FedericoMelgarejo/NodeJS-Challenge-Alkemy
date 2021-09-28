@@ -1,6 +1,6 @@
 const db = require('../database/models')
 const jwt = require('jsonwebtoken')
-//const sgMail = require('@sendgrid/mail') <-- SENDGRID IMPLEMENTATION NOT WORKING BECAUSE THEY BANNED ME (FOR SECURITY ISSUES I GUESS) XD
+//const sgMail = require('@sendgrid/mail') <-- SENDGRID IMPLEMENTATION IS NOT WORKING BECAUSE THEY BANNED ME (FOR SECURITY ISSUES I GUESS) XD
 
 //sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 

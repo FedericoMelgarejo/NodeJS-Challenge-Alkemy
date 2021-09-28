@@ -7,7 +7,7 @@ const auth = require('../middlewares/auth')
 
 // GET HOME
 router.get('/',(req,res)=>{
-    res.send('Welcome to my Disney API!')
+    res.send('Welcome to my Disney API! go to /auth/register (POST) to generate your token!')
 });
 
 //Login/Register
